@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+## Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project combines Data retrieval with random state-of-the-art random number generation to store a user's address in combination with the creation block hash, enabling companies to tag users and retrieve even more data from that. A tool that enables tracking and bookkeeping for better analysis
 
-## Available Scripts
+## How it's made
 
-In the project directory, you can run:
+The project uses block hash retrieval from Block scout and Chronical with a random number generator from Pyth network creating the optimal tagging system for all around companies who have data analysis as a feature of data mining in general. The creation can be used as a pludin or integration to streamline the process even on wallet connect => that is how simple it can get for the user integration.
+Smart contract development with MultiBaas enabled an even easier smart contract development (Remix was not even working). The static test case site implementation was deployed using BLS Sites Deploy from Blockless
 
-### `npm start`
+## Deploy locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+cd to_repo
+npm i
+```
+then run 
+```
+npm run dev
+```
+or deploy locally with blockless
+```
+sudo sh -c "curl -sSL https://raw.githubusercontent.com/BlocklessNetwork/cli/main/download.sh | bash"
+bls login
+bls sites build
+bls sites preview
+```
