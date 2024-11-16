@@ -3,6 +3,7 @@ import "./styles/App.custom.css";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useWriteContract, useReadContract } from "wagmi";
 import { abi } from "./contractABI";
+import { fetchBlocks } from "./services/blockService";
 
 const CONTRACT_ADDRESS = "0x936c839F678AAfda8d8e8a0FBEA4b363eF7D9926";
 
@@ -43,11 +44,13 @@ function App() {
 
   const handleStoreHash = async () => {
     try {
+      const blockHash = await fetchBlocks();
+
       writeContract({
         abi,
         address: CONTRACT_ADDRESS,
         functionName: "storeHash",
-        args: ["0x1234567890"],
+        args: [blockHash],
       });
     } catch (error) {
       console.error("Failed to store hash:", error);
@@ -61,7 +64,7 @@ function App() {
           <h1 className="title">Bangkok Swimmer</h1>
           <p className="subtitle">
             {!isConnected
-              ? "Connect your wallet to register!"
+              ? "Connect your wallet to store your ID!"
               : storedHash
               ? "Your wallet is already registered!"
               : "Your wallet is connected! Let's get started!"}
